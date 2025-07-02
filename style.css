@@ -1,0 +1,374 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #e61e99;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #f362bcf1;
+  
+}
+
+header h1 {
+  font-size: 24px;
+  color: white;
+  padding: 10px 20px;
+
+}
+
+nav {
+  display: flex;
+  align-items: center;
+
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin: 40px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  margin: 10px;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h2 {
+  font-size: 60px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.flavours {
+  display: flex;
+  gap: 10px;
+}
+
+.flavours img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 15px;
+}
+
+.hero-img img {
+  width: 400px;
+  height: auto;
+  border-radius: 50%;
+  margin: 10px;
+  
+}
+
+
+#pastel-img {
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.6s ease;
+      margin: 30px;
+      opacity: 1;
+      transition: opacity 0.5s ease; /* transición suave de opacidad */
+    }
+
+    .slide-arc {
+      animation: slideArc 0.6s forwards;
+    }
+
+    @keyframes slideArc {
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+      25% {
+        transform: translate(20px, 25px) rotate(45deg);
+      }
+      50% {
+        transform: translate(40px, 50px) rotate(90deg);
+      }
+      75% {
+        transform: translate(20px, 25px) rotate(135deg);
+      }
+      100% {
+        transform: translate(0, 0) rotate(180deg);
+      }
+    }
+
+
+
+/* Estilos generales */
+#productos {
+  padding: 40px 20px;
+  background: #fff8f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+#productos h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #c96a48;
+  font-weight: 700;
+}
+
+/* Contenedor de productos */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Cada producto */
+.product-item {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(201, 106, 72, 0.3);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.product-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(201, 106, 72, 0.5);
+}
+
+/* Imagen del producto */
+.product-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.product-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Título y descripción */
+.product-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #a04521;
+  font-weight: 600;
+}
+
+.product-item p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Responsive para pantallas muy pequeñas */
+@media (max-width: 400px) {
+  #productos h2 {
+    font-size: 2rem;
+  }
+  .product-item img {
+    height: 140px;
+  }
+}
+
+#nosotro {
+  background: #f7e9df;
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: 60px auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(201, 106, 72, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #5a3e2b;
+  text-align: center;
+}
+
+#nosotro h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #c96a48;
+  font-weight: 700;
+}
+
+#nosotro p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #6b4c3b;
+}
+
+#contacto {
+  background: #fff4e8;
+  padding: 45px 20px;
+  max-width: 700px;
+  margin: 60px auto 80px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(201, 106, 72, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #5a3e2b;
+  text-align: center;
+}
+
+#contacto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: #c96a48;
+  font-weight: 700;
+}
+
+#contacto p {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+#contacto a {
+  color: #a04521;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+#contacto a:hover {
+  color: #c96a48;
+  text-decoration: underline;
+}
+
+   
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.whatsapp-float img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.whatsapp-float img:hover {
+  transform: scale(1.1);
+}
+
+
+/* Responsive para teléfonos */
+/* Responsive para teléfonos */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    border-bottom: 3px solid white; /* línea inferior visible en móvil */
+    text-align: center;
+  }
+
+  header h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row; /* mantiene las opciones en fila */
+    flex-wrap: wrap;     /* permite que se bajen si no caben */
+    gap: 10px;
+    justify-content: center; /* centra las opciones */
+    padding: 0;
+    margin: 10px 0 0 0;
+  }
+
+  nav ul li {
+    text-align: center;
+    list-style: none;
+  }
+
+  nav ul li a {
+    margin: 5px 10px;
+    display: inline-block;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h2 {
+    font-size: 40px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .hero-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .hero-img img {
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  .flavours {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pastelería Dulce Arte</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<a href="https://wa.me/50576290588" class="whatsapp-float" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+
+<body>
+  <header>
+    <h1>Dulce Arte</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#nosotro">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+        <section class="hero">
+            <div  id="Inicio" class="hero-text">
+                <h2>PASTELES</h2>
+                <p>Pasteles artesanales para cada ocasión especial. Descubre nuestros sabores únicos y frescos.</p>
+                <div class="flavours">
+                <img src="chocolate.png" alt="Chocolate">
+                <img src="frutas.png" alt="Fruta">
+                <img src="vainilla.png" alt="Vainilla">
+                <img src="fresa.png" alt="Fresas">
+                </div>
+            </div>
+            <div class="hero-img">
+                <img id="pastel-img" src="pastel.png" alt="Pastel principal">
+            </div>
+        </section>
+  </main>
+
+  <section id="productos">
+    <h2>Nuestros Productos</h2>
+    <div class="product-list">
+      <div class="product-item">
+        <img src="pastel.png" alt="Pastel de Chocolate">
+        <h3>Pastel de Chocolate</h3>
+        <p>Delicioso pastel de chocolate con relleno cremoso.</p>
+      </div>
+      <div class="product-item">
+        <img src="frutas.png" alt="Pastel de Frutas">
+        <h3>Pastel de Frutas</h3>
+        <p>Fresco pastel con una variedad de frutas tropicales.</p>
+      </div>
+      <div class="product-item">
+        <img src="vainilla.png" alt="Pastel de Vainilla">
+        <h3>Pastel de Vainilla</h3>
+        <p>Clásico pastel de vainilla con un toque especial.</p>
+      </div>
+      <div class="product-item">
+        <img src="fresa.png" alt="Pastel de Fresa">
+        <h3>Pastel de Fresa</h3>
+        <p>Irresistible pastel de fresa con crema suave.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotro">
+    <h2>Sobre Nosotros</h2>
+    <p>En Dulce Arte, nos dedicamos a crear pasteles únicos y deliciosos para cada ocasión. Con años de experiencia y pasión por la repostería, ofrecemos productos frescos y de alta calidad.</p>
+  </section>
+
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Para pedidos y consultas, contáctanos a través de WhatsApp o visita nuestra tienda.</p>
+    <p>Teléfono: <a href="tel:+50576290588">+505 7629 0588</a></p>
+    <p>Email: <a href="mailto:info@dulcearte.com">info@dulcearte.com</a></p>    
+
+
+  </section>
+
+
+  <script>
+    const pastelImg = document.getElementById("pastel-img");
+    const pasteles = ["pastel.png", "frutas.png", "fresa.png", "vainilla.png", "chocolate.png"];
+    let index = 0;
+
+    // Opcional: tiempos diferentes por imagen
+    const tiempos = [2000, 3000, 2500, 4000, 3500]; // en milisegundos
+
+    function cambiarPastel() {
+    // Tiempo de fade (debe ser menor que el tiempo total)
+    const fadeTime = 500; // 500ms de fade
+
+    // Aplica fade out
+    pastelImg.style.opacity = 0;
+
+    // Espera a que termine el fade out antes de cambiar imagen
+    setTimeout(() => {
+        // Cambia al siguiente pastel
+        index = (index + 1) % pasteles.length;
+        pastelImg.src = pasteles[index];
+
+        // Aplica fade in
+        pastelImg.style.opacity = 1;
+    }, fadeTime);
+
+    // Obtiene tiempo de la siguiente imagen
+    const tiempo = tiempos[index % tiempos.length];
+
+    // Llama nuevamente después del tiempo total
+    setTimeout(cambiarPastel, tiempo);
+    }
+
+    // Inicia el ciclo
+    cambiarPastel();
+
+</script>
+
+</body>
+</html>
